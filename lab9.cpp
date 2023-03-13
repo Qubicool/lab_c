@@ -63,6 +63,10 @@ public:
     {
         std::cout << "Hello i'm employee! " << company << std::endl;
     }
+    Employee(std::string n, int a, double s, std::string c):Human(n,a,s)
+    {
+        company = c;
+    }
 };
 
 int main()
@@ -77,6 +81,8 @@ int main()
 
     Human oleg("Oleg", 38, 2560.12); // Пользовательский конструктор
     oleg.Display();
+    Employee bob("Bob", 31, 2500.2, "Google");
+    bob.Workhello();
     //Human copy(oleg); // Конструктор копирования
     //copy.Display();
 
