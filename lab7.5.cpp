@@ -3,34 +3,30 @@ using namespace std;
 // Небольшая памятка: в параметрах функций массивы «превращаются» в указатели. 
 // int lcs(int arr[]) == int lcs(int *arr) 
 
-
-int proizvarr(int arr[], int size)
+int lca(int arr[], int size)
 {
-    int res = 1;
-    for (int i = 0; i != size; i++)
+    if (size <= 0)
     {
-        if (arr[i] % 2 == 0)
-        {
-            res *=  arr[i];
-        }
+        return 0;
     }
-    return res;
+    else 
+    {
+        arr[size];
+        size = size-1;
+        lca(arr, size);
+        if (arr[size-1] < arr[size])
+        {
+            cout << arr[size] << " ";
+        }
+    }    
+    return 0;
 }
+
 int main()
 {
-    int size;
-    cout << "Enter a size of array: " << endl;
-    cin >> size;
-    int arr[size];
-    for (int i = 0; i != size; i++)
-    {
-        cout << "Enter " << i << " element of array" << endl;
-            cin >> arr[i];
-    }
-    for (int i = 0; i != size; i++)
-    {
-        cout << arr[i] << " ";
-    }
+    const int size = 7;
+    int arr[size] = {1,2,4,1,-2,7,8};
     cout << endl;
-    cout << proizvarr(arr, size);
+    lca(arr, size);
+    return 0;
 }
